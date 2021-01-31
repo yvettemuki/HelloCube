@@ -5,9 +5,60 @@ CMakeFiles/HelloCube.dir/src/glad.c.o
  /Users/yvettemuki/Documents/code/OpenGL/HelloCube/src/glad.c
  /usr/local/include/KHR/khrplatform.h
  /usr/local/include/glad/glad.h
-CMakeFiles/HelloCube.dir/main.cpp.o
- /Users/yvettemuki/Documents/code/OpenGL/HelloCube/main.cpp
- /Users/yvettemuki/Documents/code/OpenGL/HelloCube/src/stb_image.h
+CMakeFiles/HelloCube.dir/imgui/imgui.cpp.o
+ /Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imconfig.h
+ /Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imgui.cpp
+ /Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imgui.h
+ /Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imgui_internal.h
+ /Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imstb_textedit.h
+CMakeFiles/HelloCube.dir/imgui/imgui_demo.cpp.o
+ /Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imconfig.h
+ /Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imgui.h
+ /Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imgui_demo.cpp
+CMakeFiles/HelloCube.dir/imgui/imgui_draw.cpp.o
+ /Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imconfig.h
+ /Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imgui.h
+ /Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imgui_draw.cpp
+ /Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imgui_internal.h
+ /Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imstb_rectpack.h
+ /Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imstb_textedit.h
+ /Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imstb_truetype.h
+CMakeFiles/HelloCube.dir/imgui/imgui_impl_glfw.cpp.o
+ /Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imconfig.h
+ /Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imgui.h
+ /Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imgui_impl_glfw.cpp
+ /Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imgui_impl_glfw.h
  /usr/local/Cellar/glfw/3.3.2/include/GLFW/glfw3.h
+ /usr/local/Cellar/glfw/3.3.2/include/GLFW/glfw3native.h
+CMakeFiles/HelloCube.dir/imgui/imgui_impl_opengl3.cpp.o
+ /Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imconfig.h
+ /Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imgui.h
+ /Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imgui_impl_opengl3.cpp
+ /Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imgui_impl_opengl3.h
+ /usr/local/include/GL/glew.h
  /usr/local/include/KHR/khrplatform.h
  /usr/local/include/glad/glad.h
+CMakeFiles/HelloCube.dir/imgui/imgui_main.cpp.o
+ /Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imconfig.h
+ /Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imgui.h
+ /Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imgui_impl_glfw.h
+ /Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imgui_impl_opengl3.h
+ /Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imgui_main.cpp
+ /usr/local/Cellar/glfw/3.3.2/include/GLFW/glfw3.h
+ /usr/local/include/GL/glew.h
+ /usr/local/include/KHR/khrplatform.h
+ /usr/local/include/glad/glad.h
+CMakeFiles/HelloCube.dir/imgui/imgui_tables.cpp.o
+ /Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imconfig.h
+ /Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imgui.h
+ /Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imgui_internal.h
+ /Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imgui_tables.cpp
+ /Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imstb_textedit.h
+CMakeFiles/HelloCube.dir/imgui/imgui_widgets.cpp.o
+ /Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imconfig.h
+ /Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imgui.h
+ /Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imgui_internal.h
+ /Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imgui_widgets.cpp
+ /Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imstb_textedit.h
+CMakeFiles/HelloCube.dir/main.cpp.o
+ /Users/yvettemuki/Documents/code/OpenGL/HelloCube/main.cpp

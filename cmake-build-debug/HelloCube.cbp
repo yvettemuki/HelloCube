@@ -45,12 +45,11 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/usr/local/Cellar/glew/2.2.0/include/GL"/>
-					<Add directory="/usr/local/Cellar/glfw/3.3.2/include/GLFW"/>
-					<Add directory="/usr/local/include/glad"/>
+					<Add directory="/usr/local/Cellar/glfw/3.3.2/include"/>
+					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/local/include/KHR"/>
 					<Add directory="/usr/local/include/glm"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
-					<Add directory="/usr/local/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/11.0.3/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
 					<Add directory="/System/Library/Frameworks"/>
@@ -71,12 +70,11 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/usr/local/Cellar/glew/2.2.0/include/GL"/>
-					<Add directory="/usr/local/Cellar/glfw/3.3.2/include/GLFW"/>
-					<Add directory="/usr/local/include/glad"/>
+					<Add directory="/usr/local/Cellar/glfw/3.3.2/include"/>
+					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/local/include/KHR"/>
 					<Add directory="/usr/local/include/glm"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
-					<Add directory="/usr/local/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/11.0.3/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
 					<Add directory="/System/Library/Frameworks"/>
@@ -90,6 +88,54 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imconfig.h">
+			<Option target="HelloCube"/>
+		</Unit>
+		<Unit filename="/Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imgui.cpp">
+			<Option target="HelloCube"/>
+		</Unit>
+		<Unit filename="/Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imgui.h">
+			<Option target="HelloCube"/>
+		</Unit>
+		<Unit filename="/Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imgui_demo.cpp">
+			<Option target="HelloCube"/>
+		</Unit>
+		<Unit filename="/Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imgui_draw.cpp">
+			<Option target="HelloCube"/>
+		</Unit>
+		<Unit filename="/Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imgui_impl_glfw.cpp">
+			<Option target="HelloCube"/>
+		</Unit>
+		<Unit filename="/Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imgui_impl_glfw.h">
+			<Option target="HelloCube"/>
+		</Unit>
+		<Unit filename="/Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imgui_impl_opengl3.cpp">
+			<Option target="HelloCube"/>
+		</Unit>
+		<Unit filename="/Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imgui_impl_opengl3.h">
+			<Option target="HelloCube"/>
+		</Unit>
+		<Unit filename="/Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imgui_internal.h">
+			<Option target="HelloCube"/>
+		</Unit>
+		<Unit filename="/Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imgui_main.cpp">
+			<Option target="HelloCube"/>
+		</Unit>
+		<Unit filename="/Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imgui_tables.cpp">
+			<Option target="HelloCube"/>
+		</Unit>
+		<Unit filename="/Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imgui_widgets.cpp">
+			<Option target="HelloCube"/>
+		</Unit>
+		<Unit filename="/Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imstb_rectpack.h">
+			<Option target="HelloCube"/>
+		</Unit>
+		<Unit filename="/Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imstb_textedit.h">
+			<Option target="HelloCube"/>
+		</Unit>
+		<Unit filename="/Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imstb_truetype.h">
+			<Option target="HelloCube"/>
+		</Unit>
 		<Unit filename="/Users/yvettemuki/Documents/code/OpenGL/HelloCube/main.cpp">
 			<Option target="HelloCube"/>
 		</Unit>

@@ -5,9 +5,60 @@ CMakeFiles/HelloCube.dir/src/glad.c.o: ../src/glad.c
 CMakeFiles/HelloCube.dir/src/glad.c.o: /usr/local/include/KHR/khrplatform.h
 CMakeFiles/HelloCube.dir/src/glad.c.o: /usr/local/include/glad/glad.h
 
+CMakeFiles/HelloCube.dir/imgui/imgui.cpp.o: ../imgui/imconfig.h
+CMakeFiles/HelloCube.dir/imgui/imgui.cpp.o: ../imgui/imgui.cpp
+CMakeFiles/HelloCube.dir/imgui/imgui.cpp.o: ../imgui/imgui.h
+CMakeFiles/HelloCube.dir/imgui/imgui.cpp.o: ../imgui/imgui_internal.h
+CMakeFiles/HelloCube.dir/imgui/imgui.cpp.o: ../imgui/imstb_textedit.h
+
+CMakeFiles/HelloCube.dir/imgui/imgui_demo.cpp.o: ../imgui/imconfig.h
+CMakeFiles/HelloCube.dir/imgui/imgui_demo.cpp.o: ../imgui/imgui.h
+CMakeFiles/HelloCube.dir/imgui/imgui_demo.cpp.o: ../imgui/imgui_demo.cpp
+
+CMakeFiles/HelloCube.dir/imgui/imgui_draw.cpp.o: ../imgui/imconfig.h
+CMakeFiles/HelloCube.dir/imgui/imgui_draw.cpp.o: ../imgui/imgui.h
+CMakeFiles/HelloCube.dir/imgui/imgui_draw.cpp.o: ../imgui/imgui_draw.cpp
+CMakeFiles/HelloCube.dir/imgui/imgui_draw.cpp.o: ../imgui/imgui_internal.h
+CMakeFiles/HelloCube.dir/imgui/imgui_draw.cpp.o: ../imgui/imstb_rectpack.h
+CMakeFiles/HelloCube.dir/imgui/imgui_draw.cpp.o: ../imgui/imstb_textedit.h
+CMakeFiles/HelloCube.dir/imgui/imgui_draw.cpp.o: ../imgui/imstb_truetype.h
+
+CMakeFiles/HelloCube.dir/imgui/imgui_impl_glfw.cpp.o: ../imgui/imconfig.h
+CMakeFiles/HelloCube.dir/imgui/imgui_impl_glfw.cpp.o: ../imgui/imgui.h
+CMakeFiles/HelloCube.dir/imgui/imgui_impl_glfw.cpp.o: ../imgui/imgui_impl_glfw.cpp
+CMakeFiles/HelloCube.dir/imgui/imgui_impl_glfw.cpp.o: ../imgui/imgui_impl_glfw.h
+CMakeFiles/HelloCube.dir/imgui/imgui_impl_glfw.cpp.o: /usr/local/Cellar/glfw/3.3.2/include/GLFW/glfw3.h
+CMakeFiles/HelloCube.dir/imgui/imgui_impl_glfw.cpp.o: /usr/local/Cellar/glfw/3.3.2/include/GLFW/glfw3native.h
+
+CMakeFiles/HelloCube.dir/imgui/imgui_impl_opengl3.cpp.o: ../imgui/imconfig.h
+CMakeFiles/HelloCube.dir/imgui/imgui_impl_opengl3.cpp.o: ../imgui/imgui.h
+CMakeFiles/HelloCube.dir/imgui/imgui_impl_opengl3.cpp.o: ../imgui/imgui_impl_opengl3.cpp
+CMakeFiles/HelloCube.dir/imgui/imgui_impl_opengl3.cpp.o: ../imgui/imgui_impl_opengl3.h
+CMakeFiles/HelloCube.dir/imgui/imgui_impl_opengl3.cpp.o: /usr/local/include/GL/glew.h
+CMakeFiles/HelloCube.dir/imgui/imgui_impl_opengl3.cpp.o: /usr/local/include/KHR/khrplatform.h
+CMakeFiles/HelloCube.dir/imgui/imgui_impl_opengl3.cpp.o: /usr/local/include/glad/glad.h
+
+CMakeFiles/HelloCube.dir/imgui/imgui_main.cpp.o: ../imgui/imconfig.h
+CMakeFiles/HelloCube.dir/imgui/imgui_main.cpp.o: ../imgui/imgui.h
+CMakeFiles/HelloCube.dir/imgui/imgui_main.cpp.o: ../imgui/imgui_impl_glfw.h
+CMakeFiles/HelloCube.dir/imgui/imgui_main.cpp.o: ../imgui/imgui_impl_opengl3.h
+CMakeFiles/HelloCube.dir/imgui/imgui_main.cpp.o: ../imgui/imgui_main.cpp
+CMakeFiles/HelloCube.dir/imgui/imgui_main.cpp.o: /usr/local/Cellar/glfw/3.3.2/include/GLFW/glfw3.h
+CMakeFiles/HelloCube.dir/imgui/imgui_main.cpp.o: /usr/local/include/GL/glew.h
+CMakeFiles/HelloCube.dir/imgui/imgui_main.cpp.o: /usr/local/include/KHR/khrplatform.h
+CMakeFiles/HelloCube.dir/imgui/imgui_main.cpp.o: /usr/local/include/glad/glad.h
+
+CMakeFiles/HelloCube.dir/imgui/imgui_tables.cpp.o: ../imgui/imconfig.h
+CMakeFiles/HelloCube.dir/imgui/imgui_tables.cpp.o: ../imgui/imgui.h
+CMakeFiles/HelloCube.dir/imgui/imgui_tables.cpp.o: ../imgui/imgui_internal.h
+CMakeFiles/HelloCube.dir/imgui/imgui_tables.cpp.o: ../imgui/imgui_tables.cpp
+CMakeFiles/HelloCube.dir/imgui/imgui_tables.cpp.o: ../imgui/imstb_textedit.h
+
+CMakeFiles/HelloCube.dir/imgui/imgui_widgets.cpp.o: ../imgui/imconfig.h
+CMakeFiles/HelloCube.dir/imgui/imgui_widgets.cpp.o: ../imgui/imgui.h
+CMakeFiles/HelloCube.dir/imgui/imgui_widgets.cpp.o: ../imgui/imgui_internal.h
+CMakeFiles/HelloCube.dir/imgui/imgui_widgets.cpp.o: ../imgui/imgui_widgets.cpp
+CMakeFiles/HelloCube.dir/imgui/imgui_widgets.cpp.o: ../imgui/imstb_textedit.h
+
 CMakeFiles/HelloCube.dir/main.cpp.o: ../main.cpp
-CMakeFiles/HelloCube.dir/main.cpp.o: ../src/stb_image.h
-CMakeFiles/HelloCube.dir/main.cpp.o: /usr/local/Cellar/glfw/3.3.2/include/GLFW/glfw3.h
-CMakeFiles/HelloCube.dir/main.cpp.o: /usr/local/include/KHR/khrplatform.h
-CMakeFiles/HelloCube.dir/main.cpp.o: /usr/local/include/glad/glad.h
 
