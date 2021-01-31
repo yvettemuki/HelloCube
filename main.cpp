@@ -2,12 +2,19 @@
 #include <glfw3.h>
 #include <iostream>
 #include <cmath>
+#include <vector>
 
 #define STB_IMAGE_IMPLEMENTATION
 #include "src/stb_image.h"
 
 using namespace std;
 
+
+// settings
+const unsigned int SCR_WIDTH = 800;
+const unsigned int SCR_HEIGHT = 600;
+const string path = "/Users/yvettemuki/Documents/code/OpenGL_Learn/HelloWorld/src/";
+std::vector<float> colors = {0.2f, 0.3f, 0.3f, 1.0f};
 
 void processInput(GLFWwindow *window) {
     if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) {
@@ -19,10 +26,14 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
     glViewport(0, 0, width, height);
 }
 
-// settings
-const unsigned int SCR_WIDTH = 800;
-const unsigned int SCR_HEIGHT = 600;
-const string path = "/Users/yvettemuki/Documents/code/OpenGL_Learn/HelloWorld/src/";
+void mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
+{
+    if (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS) {
+        if (colors[0] < 1) {
+            colors[0] = colors[0] + 0.05;
+        }
+    }
+}
 
 const char *vertexShaderSource = "#version 330 core\n"
                                  "layout (location = 0) in vec3 aPos;\n"
@@ -58,7 +69,7 @@ int main(void)
     // set for MacOS
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 
-    GLFWwindow* window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "HelloWorld", NULL, NULL);
+    GLFWwindow* window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "HelloCube", NULL, NULL);
     if (window == NULL) {
         std::cout << "Failed to create GLFW window" << std::endl;
         glfwTerminate();
@@ -68,6 +79,9 @@ int main(void)
     // glfw window creation
     glfwMakeContextCurrent(window);
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+
+    // glfw mouse input callback
+    glfwSetMouseButtonCallback(window, mouse_button_callback);
 
     // glad: load all OpenGL function pointers
     if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
@@ -185,7 +199,7 @@ int main(void)
 
         // render
         // set color and clear
-        glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+        glClearColor(colors[0], colors[1], colors[2], colors[3]);
         glClear(GL_COLOR_BUFFER_BIT);
 
         // activate shader program
