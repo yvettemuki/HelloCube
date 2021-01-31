@@ -1,0 +1,3 @@
+/Users/yvettemuki/Documents/code/OpenGL/cube_shader/build/CMakeFiles/rebuild_cache.dir
+/Users/yvettemuki/Documents/code/OpenGL/cube_shader/build/CMakeFiles/edit_cache.dir
+/Users/yvettemuki/Documents/code/OpenGL/cube_shader/build/CMakeFiles/cube_shader.dir
