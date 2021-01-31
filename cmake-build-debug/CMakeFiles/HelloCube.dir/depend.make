@@ -6,6 +6,7 @@ CMakeFiles/HelloCube.dir/src/glad.c.o: /usr/local/include/KHR/khrplatform.h
 CMakeFiles/HelloCube.dir/src/glad.c.o: /usr/local/include/glad/glad.h
 
 CMakeFiles/HelloCube.dir/main.cpp.o: ../main.cpp
+CMakeFiles/HelloCube.dir/main.cpp.o: ../src/stb_image.h
 CMakeFiles/HelloCube.dir/main.cpp.o: /usr/local/Cellar/glfw/3.3.2/include/GLFW/glfw3.h
 CMakeFiles/HelloCube.dir/main.cpp.o: /usr/local/include/KHR/khrplatform.h
 CMakeFiles/HelloCube.dir/main.cpp.o: /usr/local/include/glad/glad.h

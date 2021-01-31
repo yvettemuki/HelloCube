@@ -99,6 +99,9 @@
 		<Unit filename="/Users/yvettemuki/Documents/code/OpenGL/HelloCube/src/glad.c">
 			<Option target="HelloCube"/>
 		</Unit>
+		<Unit filename="/Users/yvettemuki/Documents/code/OpenGL/HelloCube/src/stb_image.h">
+			<Option target="HelloCube"/>
+		</Unit>
 		<Unit filename="/Users/yvettemuki/Documents/code/OpenGL/HelloCube/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

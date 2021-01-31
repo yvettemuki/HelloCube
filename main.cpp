@@ -3,6 +3,9 @@
 #include <iostream>
 #include <cmath>
 
+#define STB_IMAGE_IMPLEMENTATION
+#include "src/stb_image.h"
+
 using namespace std;
 
 
@@ -19,27 +22,34 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
 // settings
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
+const string path = "/Users/yvettemuki/Documents/code/OpenGL_Learn/HelloWorld/src/";
 
 const char *vertexShaderSource = "#version 330 core\n"
                                  "layout (location = 0) in vec3 aPos;\n"
-                                 "layout (location = 1) in vec3 aColor;"
-                                 "out vec3 ourColor;"
+                                 "layout (location = 1) in vec3 aColor;\n"
+                                 "layout (location = 2) in vec2 aTexCoord;\n"
+                                 "out vec3 ourColor;\n"
+                                 "out vec2 TexCoord;\n"
                                  "void main()\n"
                                  "{\n"
                                  "   gl_Position = vec4(aPos, 1.0);\n"
-                                 "   ourColor = aColor;"
+                                 "   ourColor = aColor;\n"
+                                 "   TexCoord = aTexCoord;\n"
                                  "}\0";
+
 const char *fragmentShaderSource = "#version 330 core\n"
                                    "out vec4 FragColor;\n"
-                                   // "uniform vec4 ourColor;\n"
-                                   "in vec3 ourColor;"
+                                   "in vec3 ourColor;\n"
+                                   "in vec2 TexCoord;\n"
+                                   "uniform sampler2D ourTexture;\n"
                                    "void main()\n"
                                    "{\n"
-                                   "   FragColor = vec4(ourColor, 1.0);\n"
+                                   "   FragColor = texture(ourTexture, TexCoord);\n"
                                    "}\n\0";
 
 int main(void)
 {
+
     // glfw: initialize and configure
     glfwInit();
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
@@ -108,10 +118,11 @@ int main(void)
     glDeleteShader(fragmentShader);
 
     float vertices[] = {
-            // 位置              // 颜色
-            0.5f, -0.5f, 0.0f,  1.0f, 0.0f, 0.0f,   // 右下
-            -0.5f, -0.5f, 0.0f,  0.0f, 1.0f, 0.0f,   // 左下
-            0.0f,  0.5f, 0.0f,  0.0f, 0.0f, 1.0f    // 顶部
+    //     ---- position ----       ---- color ----     - texture coordinate -
+            0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,   1.0f, 1.0f,   // 右上
+            0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,   1.0f, 0.0f,   // 右下
+            -0.5f, -0.5f, 0.0f,   0.0f, 0.0f, 1.0f,   0.0f, 0.0f,   // 左下
+            -0.5f,  0.5f, 0.0f,   1.0f, 1.0f, 0.0f,   0.0f, 1.0f    // 左上
     };
     unsigned int indices[] = { // 注意索引从0开始!
             0, 1, 3, // 第一个三角形
@@ -119,7 +130,7 @@ int main(void)
     };
 
     unsigned int VBO, VAO, EBO;
-    glGenVertexArrays(1, &VAO); //!!!!
+    glGenVertexArrays(1, &VAO);
     glGenBuffers(1, &VBO);
     glGenBuffers(1, &EBO);
     // bind the Vertex Array Object first, then bind and set vertex buffers(s), and then configure vertex attribute(s).
@@ -133,20 +144,38 @@ int main(void)
 
 
     // position attribute
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
     // color attribute
-    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(3 * sizeof(float)));
     glEnableVertexAttribArray(1);
+    // texture attribute
+    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
+    glEnableVertexAttribArray(2);
 
-    // note that this is allowed, the call to glVertexAttribPointer registered VBO as the vertex attribute's bound
-    // vertex buffer object so afterwards we can safely unbind
-    glBindBuffer(GL_ARRAY_BUFFER, 0);
+    // load and create texture
+    unsigned int texture;
+    glGenTextures(1, &texture);
+    glBindTexture(GL_TEXTURE_2D, texture);
+    //set texture object surrounding / filtering way
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    // image load
+    int width, height, nrChannels;
+    unsigned char *data = stbi_load("/Users/yvettemuki/Documents/code/OpenGL/HelloCube/container.jpg", &width, &height, &nrChannels, 0);
+    if (data)
+    {
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+        glGenerateMipmap(GL_TEXTURE_2D);
+    }
+    else
+    {
+        std::cout << "Failed to load texture" << std::endl;
+    }
+    stbi_image_free(data);
 
-    // You can unbind the VAO afterwareds so other VAO calls won't accidentally modify this VAO, but this rarely happens.
-    // Modifying other VAOs requires a call to glBindVertxArray anyways so we generally don't unbind VAOs (nor VBOs) when
-    // it's not directly necessary.
-    glBindVertexArray(0);
 
     // render loop
     while (!glfwWindowShouldClose(window))
@@ -156,15 +185,16 @@ int main(void)
 
         // render
         // set color and clear
-        glClearColor(0.4f, 0.3f, 0.3f, 1.0f);
+        glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 
         // activate shader program
         glUseProgram(shaderProgram);
 
-        // draw triangle
+        // draw texture box
+        glBindTexture(GL_TEXTURE_2D, texture);
         glBindVertexArray(VAO); // seeing as we only have a single VAO there's no need to bind it every time, but we'll do so to keep things a bit more organized
-        glDrawArrays(GL_TRIANGLES, 0, 3); // use vertex buffer to draw
+        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
         glfwSwapBuffers(window);
