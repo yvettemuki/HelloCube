@@ -53,8 +53,8 @@ using namespace gl;
 
 unsigned int loadTexture(const char* path);
 // settings
-const unsigned int SCR_WIDTH = 1080;
-const unsigned int SCR_HEIGHT = 720;
+const unsigned int SCR_WIDTH = 800;
+const unsigned int SCR_HEIGHT = 800;
 
 static void glfw_error_callback(int error, const char* description)
 {
@@ -337,9 +337,9 @@ int main(int, char**) {
         // draw cubes
         glUseProgram(shaderProgram);
         glm::mat4 model = glm::mat4(1.0f);
-        model = glm::rotate(model, glm::radians(-55.0f), glm::vec3(1.0f, 0.0f, 0.0f)); // rotate by x
+        model = glm::rotate(model, glm::radians(-55.0f), glm::vec3(1.0f, 1.0f, 0.0f)); // rotate by x
         glm::mat4 view = glm::mat4(1.0f);
-        view = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
+        view = glm::translate(view, glm::vec3(0.0f, 0.0f, -5.0f));
         glm::mat4 projection = glm::mat4(1.0f);
         projection = glm::perspective(glm::radians(45.0f), (float)display_h / (float)display_w, 0.1f, 100.0f);
         int modelLoc = glGetUniformLocation(shaderProgram, "model");
