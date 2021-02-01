@@ -22,7 +22,7 @@ link_libraries(${OPENGL} ${GLEW_LINK} ${GLFW_LINK})
 # 这个glad.c在第2步中说过要拉到项目中，注意路径
 set(SOURCE_FILES "src/glad.c" "main.cpp"
         src/MyShader.h
-        src/stb_image.h
+        stb_image.h
         imgui/imgui_impl_opengl3.h
         imgui/imgui_impl_glfw.h
         imgui/imconfig.h
@@ -37,9 +37,9 @@ set(SOURCE_FILES "src/glad.c" "main.cpp"
         imgui/imgui_widgets.cpp
         imgui/imstb_rectpack.h
         imgui/imstb_textedit.h
-        imgui/imstb_truetype.h)
+        imgui/imstb_truetype.h camera.h main2.cpp model.h mesh.h)
 
-add_executable(HelloCube ${SOURCE_FILES} imgui/imgui_main.cpp)
+add_executable(HelloCube ${SOURCE_FILES} imgui/imgui_main.cpp main_new.cpp)
 
 # mac下这步很重要
 if (APPLE)

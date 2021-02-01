@@ -194,9 +194,22 @@ CMakeFiles/HelloCube.dir/imgui/imgui_widgets.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/HelloCube.dir/imgui/imgui_widgets.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imgui_widgets.cpp -o CMakeFiles/HelloCube.dir/imgui/imgui_widgets.cpp.s
 
+CMakeFiles/HelloCube.dir/main2.cpp.o: CMakeFiles/HelloCube.dir/flags.make
+CMakeFiles/HelloCube.dir/main2.cpp.o: ../main2.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvettemuki/Documents/code/OpenGL/HelloCube/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/HelloCube.dir/main2.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/HelloCube.dir/main2.cpp.o -c /Users/yvettemuki/Documents/code/OpenGL/HelloCube/main2.cpp
+
+CMakeFiles/HelloCube.dir/main2.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/HelloCube.dir/main2.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/yvettemuki/Documents/code/OpenGL/HelloCube/main2.cpp > CMakeFiles/HelloCube.dir/main2.cpp.i
+
+CMakeFiles/HelloCube.dir/main2.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/HelloCube.dir/main2.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yvettemuki/Documents/code/OpenGL/HelloCube/main2.cpp -o CMakeFiles/HelloCube.dir/main2.cpp.s
+
 CMakeFiles/HelloCube.dir/imgui/imgui_main.cpp.o: CMakeFiles/HelloCube.dir/flags.make
 CMakeFiles/HelloCube.dir/imgui/imgui_main.cpp.o: ../imgui/imgui_main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvettemuki/Documents/code/OpenGL/HelloCube/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/HelloCube.dir/imgui/imgui_main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvettemuki/Documents/code/OpenGL/HelloCube/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/HelloCube.dir/imgui/imgui_main.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/HelloCube.dir/imgui/imgui_main.cpp.o -c /Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imgui_main.cpp
 
 CMakeFiles/HelloCube.dir/imgui/imgui_main.cpp.i: cmake_force
@@ -206,6 +219,19 @@ CMakeFiles/HelloCube.dir/imgui/imgui_main.cpp.i: cmake_force
 CMakeFiles/HelloCube.dir/imgui/imgui_main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/HelloCube.dir/imgui/imgui_main.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imgui_main.cpp -o CMakeFiles/HelloCube.dir/imgui/imgui_main.cpp.s
+
+CMakeFiles/HelloCube.dir/main_new.cpp.o: CMakeFiles/HelloCube.dir/flags.make
+CMakeFiles/HelloCube.dir/main_new.cpp.o: ../main_new.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvettemuki/Documents/code/OpenGL/HelloCube/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/HelloCube.dir/main_new.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/HelloCube.dir/main_new.cpp.o -c /Users/yvettemuki/Documents/code/OpenGL/HelloCube/main_new.cpp
+
+CMakeFiles/HelloCube.dir/main_new.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/HelloCube.dir/main_new.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/yvettemuki/Documents/code/OpenGL/HelloCube/main_new.cpp > CMakeFiles/HelloCube.dir/main_new.cpp.i
+
+CMakeFiles/HelloCube.dir/main_new.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/HelloCube.dir/main_new.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yvettemuki/Documents/code/OpenGL/HelloCube/main_new.cpp -o CMakeFiles/HelloCube.dir/main_new.cpp.s
 
 # Object files for target HelloCube
 HelloCube_OBJECTS = \
@@ -218,7 +244,9 @@ HelloCube_OBJECTS = \
 "CMakeFiles/HelloCube.dir/imgui/imgui_impl_opengl3.cpp.o" \
 "CMakeFiles/HelloCube.dir/imgui/imgui_tables.cpp.o" \
 "CMakeFiles/HelloCube.dir/imgui/imgui_widgets.cpp.o" \
-"CMakeFiles/HelloCube.dir/imgui/imgui_main.cpp.o"
+"CMakeFiles/HelloCube.dir/main2.cpp.o" \
+"CMakeFiles/HelloCube.dir/imgui/imgui_main.cpp.o" \
+"CMakeFiles/HelloCube.dir/main_new.cpp.o"
 
 # External object files for target HelloCube
 HelloCube_EXTERNAL_OBJECTS =
@@ -232,12 +260,14 @@ HelloCube: CMakeFiles/HelloCube.dir/imgui/imgui_impl_glfw.cpp.o
 HelloCube: CMakeFiles/HelloCube.dir/imgui/imgui_impl_opengl3.cpp.o
 HelloCube: CMakeFiles/HelloCube.dir/imgui/imgui_tables.cpp.o
 HelloCube: CMakeFiles/HelloCube.dir/imgui/imgui_widgets.cpp.o
+HelloCube: CMakeFiles/HelloCube.dir/main2.cpp.o
 HelloCube: CMakeFiles/HelloCube.dir/imgui/imgui_main.cpp.o
+HelloCube: CMakeFiles/HelloCube.dir/main_new.cpp.o
 HelloCube: CMakeFiles/HelloCube.dir/build.make
 HelloCube: /usr/local/Cellar/glew/2.2.0/lib/libGLEW.2.2.dylib
 HelloCube: /usr/local/Cellar/glfw/3.3.2/lib/libglfw.3.dylib
 HelloCube: CMakeFiles/HelloCube.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/yvettemuki/Documents/code/OpenGL/HelloCube/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable HelloCube"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/yvettemuki/Documents/code/OpenGL/HelloCube/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable HelloCube"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/HelloCube.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

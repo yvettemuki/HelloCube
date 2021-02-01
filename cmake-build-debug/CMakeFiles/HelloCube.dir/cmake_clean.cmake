@@ -8,6 +8,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/HelloCube.dir/imgui/imgui_tables.cpp.o"
   "CMakeFiles/HelloCube.dir/imgui/imgui_widgets.cpp.o"
   "CMakeFiles/HelloCube.dir/main.cpp.o"
+  "CMakeFiles/HelloCube.dir/main2.cpp.o"
+  "CMakeFiles/HelloCube.dir/main_new.cpp.o"
   "CMakeFiles/HelloCube.dir/src/glad.c.o"
   "HelloCube"
   "HelloCube.pdb"

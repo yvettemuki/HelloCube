@@ -386,6 +386,60 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/HelloCube.dir/build.make CMakeFiles/HelloCube.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+main2.o: main2.cpp.o
+
+.PHONY : main2.o
+
+# target to build an object file
+main2.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HelloCube.dir/build.make CMakeFiles/HelloCube.dir/main2.cpp.o
+.PHONY : main2.cpp.o
+
+main2.i: main2.cpp.i
+
+.PHONY : main2.i
+
+# target to preprocess a source file
+main2.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HelloCube.dir/build.make CMakeFiles/HelloCube.dir/main2.cpp.i
+.PHONY : main2.cpp.i
+
+main2.s: main2.cpp.s
+
+.PHONY : main2.s
+
+# target to generate assembly for a file
+main2.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HelloCube.dir/build.make CMakeFiles/HelloCube.dir/main2.cpp.s
+.PHONY : main2.cpp.s
+
+main_new.o: main_new.cpp.o
+
+.PHONY : main_new.o
+
+# target to build an object file
+main_new.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HelloCube.dir/build.make CMakeFiles/HelloCube.dir/main_new.cpp.o
+.PHONY : main_new.cpp.o
+
+main_new.i: main_new.cpp.i
+
+.PHONY : main_new.i
+
+# target to preprocess a source file
+main_new.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HelloCube.dir/build.make CMakeFiles/HelloCube.dir/main_new.cpp.i
+.PHONY : main_new.cpp.i
+
+main_new.s: main_new.cpp.s
+
+.PHONY : main_new.s
+
+# target to generate assembly for a file
+main_new.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HelloCube.dir/build.make CMakeFiles/HelloCube.dir/main_new.cpp.s
+.PHONY : main_new.cpp.s
+
 src/glad.o: src/glad.c.o
 
 .PHONY : src/glad.o
@@ -449,6 +503,12 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... main2.o"
+	@echo "... main2.i"
+	@echo "... main2.s"
+	@echo "... main_new.o"
+	@echo "... main_new.i"
+	@echo "... main_new.s"
 	@echo "... src/glad.o"
 	@echo "... src/glad.i"
 	@echo "... src/glad.s"
