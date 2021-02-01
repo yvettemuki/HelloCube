@@ -52,13 +52,13 @@ CMakeFiles/HelloCube.dir/imgui/imgui_widgets.cpp.o
  /Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imgui_internal.h
  /Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imgui_widgets.cpp
  /Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imstb_textedit.h
-CMakeFiles/HelloCube.dir/main_new.cpp.o
- /Users/yvettemuki/Documents/code/OpenGL/HelloCube/MyShader.h
+CMakeFiles/HelloCube.dir/src/main_new.cpp.o
  /Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imconfig.h
  /Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imgui.h
  /Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imgui_impl_glfw.h
  /Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imgui_impl_opengl3.h
- /Users/yvettemuki/Documents/code/OpenGL/HelloCube/main_new.cpp
+ /Users/yvettemuki/Documents/code/OpenGL/HelloCube/src/MyShader.h
+ /Users/yvettemuki/Documents/code/OpenGL/HelloCube/src/main_new.cpp
  /Users/yvettemuki/Documents/code/OpenGL/HelloCube/stb_image.h
  /usr/local/Cellar/glfw/3.3.2/include/GLFW/glfw3.h
  /usr/local/include/GL/glew.h

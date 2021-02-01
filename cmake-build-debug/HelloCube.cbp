@@ -136,10 +136,10 @@
 		<Unit filename="/Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imstb_truetype.h">
 			<Option target="HelloCube"/>
 		</Unit>
-		<Unit filename="/Users/yvettemuki/Documents/code/OpenGL/HelloCube/main_new.cpp">
+		<Unit filename="/Users/yvettemuki/Documents/code/OpenGL/HelloCube/src/glad.c">
 			<Option target="HelloCube"/>
 		</Unit>
-		<Unit filename="/Users/yvettemuki/Documents/code/OpenGL/HelloCube/src/glad.c">
+		<Unit filename="/Users/yvettemuki/Documents/code/OpenGL/HelloCube/src/main_new.cpp">
 			<Option target="HelloCube"/>
 		</Unit>
 		<Unit filename="/Users/yvettemuki/Documents/code/OpenGL/HelloCube/stb_image.h">

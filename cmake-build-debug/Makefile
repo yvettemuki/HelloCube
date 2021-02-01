@@ -359,33 +359,6 @@ imgui/imgui_widgets.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/HelloCube.dir/build.make CMakeFiles/HelloCube.dir/imgui/imgui_widgets.cpp.s
 .PHONY : imgui/imgui_widgets.cpp.s
 
-main_new.o: main_new.cpp.o
-
-.PHONY : main_new.o
-
-# target to build an object file
-main_new.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/HelloCube.dir/build.make CMakeFiles/HelloCube.dir/main_new.cpp.o
-.PHONY : main_new.cpp.o
-
-main_new.i: main_new.cpp.i
-
-.PHONY : main_new.i
-
-# target to preprocess a source file
-main_new.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/HelloCube.dir/build.make CMakeFiles/HelloCube.dir/main_new.cpp.i
-.PHONY : main_new.cpp.i
-
-main_new.s: main_new.cpp.s
-
-.PHONY : main_new.s
-
-# target to generate assembly for a file
-main_new.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/HelloCube.dir/build.make CMakeFiles/HelloCube.dir/main_new.cpp.s
-.PHONY : main_new.cpp.s
-
 src/glad.o: src/glad.c.o
 
 .PHONY : src/glad.o
@@ -412,6 +385,33 @@ src/glad.s: src/glad.c.s
 src/glad.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/HelloCube.dir/build.make CMakeFiles/HelloCube.dir/src/glad.c.s
 .PHONY : src/glad.c.s
+
+src/main_new.o: src/main_new.cpp.o
+
+.PHONY : src/main_new.o
+
+# target to build an object file
+src/main_new.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HelloCube.dir/build.make CMakeFiles/HelloCube.dir/src/main_new.cpp.o
+.PHONY : src/main_new.cpp.o
+
+src/main_new.i: src/main_new.cpp.i
+
+.PHONY : src/main_new.i
+
+# target to preprocess a source file
+src/main_new.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HelloCube.dir/build.make CMakeFiles/HelloCube.dir/src/main_new.cpp.i
+.PHONY : src/main_new.cpp.i
+
+src/main_new.s: src/main_new.cpp.s
+
+.PHONY : src/main_new.s
+
+# target to generate assembly for a file
+src/main_new.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HelloCube.dir/build.make CMakeFiles/HelloCube.dir/src/main_new.cpp.s
+.PHONY : src/main_new.cpp.s
 
 # Help Target
 help:
@@ -446,12 +446,12 @@ help:
 	@echo "... imgui/imgui_widgets.o"
 	@echo "... imgui/imgui_widgets.i"
 	@echo "... imgui/imgui_widgets.s"
-	@echo "... main_new.o"
-	@echo "... main_new.i"
-	@echo "... main_new.s"
 	@echo "... src/glad.o"
 	@echo "... src/glad.i"
 	@echo "... src/glad.s"
+	@echo "... src/main_new.o"
+	@echo "... src/main_new.i"
+	@echo "... src/main_new.s"
 .PHONY : help
 
 

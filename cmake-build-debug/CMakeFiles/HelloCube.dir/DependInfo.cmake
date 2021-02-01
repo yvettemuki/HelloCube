@@ -26,7 +26,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imgui_main.cpp" "/Users/yvettemuki/Documents/code/OpenGL/HelloCube/cmake-build-debug/CMakeFiles/HelloCube.dir/imgui/imgui_main.cpp.o"
   "/Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imgui_tables.cpp" "/Users/yvettemuki/Documents/code/OpenGL/HelloCube/cmake-build-debug/CMakeFiles/HelloCube.dir/imgui/imgui_tables.cpp.o"
   "/Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imgui_widgets.cpp" "/Users/yvettemuki/Documents/code/OpenGL/HelloCube/cmake-build-debug/CMakeFiles/HelloCube.dir/imgui/imgui_widgets.cpp.o"
-  "/Users/yvettemuki/Documents/code/OpenGL/HelloCube/main_new.cpp" "/Users/yvettemuki/Documents/code/OpenGL/HelloCube/cmake-build-debug/CMakeFiles/HelloCube.dir/main_new.cpp.o"
+  "/Users/yvettemuki/Documents/code/OpenGL/HelloCube/src/main_new.cpp" "/Users/yvettemuki/Documents/code/OpenGL/HelloCube/cmake-build-debug/CMakeFiles/HelloCube.dir/src/main_new.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

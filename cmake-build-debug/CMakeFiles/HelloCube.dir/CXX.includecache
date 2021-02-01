@@ -6,18 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/Users/yvettemuki/Documents/code/OpenGL/HelloCube/MyShader.h
-glm/glm.hpp
-/Users/yvettemuki/Documents/code/OpenGL/HelloCube/glm/glm.hpp
-string
--
-fstream
--
-sstream
--
-iostream
--
-
 /Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imconfig.h
 
 /Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imgui.h
@@ -48,16 +36,28 @@ imgui.h
 TargetConditionals.h
 /Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/TargetConditionals.h
 
-/Users/yvettemuki/Documents/code/OpenGL/HelloCube/main_new.cpp
-imgui/imgui.h
+/Users/yvettemuki/Documents/code/OpenGL/HelloCube/src/MyShader.h
+glm/glm.hpp
+/Users/yvettemuki/Documents/code/OpenGL/HelloCube/src/glm/glm.hpp
+string
+-
+fstream
+-
+sstream
+-
+iostream
+-
+
+/Users/yvettemuki/Documents/code/OpenGL/HelloCube/src/main_new.cpp
+../imgui/imgui.h
 /Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imgui.h
-imgui/imgui_impl_glfw.h
+../imgui/imgui_impl_glfw.h
 /Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imgui_impl_glfw.h
-imgui/imgui_impl_opengl3.h
+../imgui/imgui_impl_opengl3.h
 /Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imgui_impl_opengl3.h
 stdio.h
 -
-stb_image.h
+../stb_image.h
 /Users/yvettemuki/Documents/code/OpenGL/HelloCube/stb_image.h
 GL/gl3w.h
 -
@@ -84,7 +84,7 @@ glm/gtc/matrix_transform.hpp
 glm/gtc/type_ptr.hpp
 -
 MyShader.h
-/Users/yvettemuki/Documents/code/OpenGL/HelloCube/MyShader.h
+/Users/yvettemuki/Documents/code/OpenGL/HelloCube/src/MyShader.h
 
 /Users/yvettemuki/Documents/code/OpenGL/HelloCube/stb_image.h
 stb_image.h

@@ -38,7 +38,7 @@ set(SOURCE_FILES "src/glad.c"
         imgui/imstb_textedit.h
         imgui/imstb_truetype.h)
 
-add_executable(HelloCube ${SOURCE_FILES} imgui/imgui_main.cpp main_new.cpp)
+add_executable(HelloCube ${SOURCE_FILES} imgui/imgui_main.cpp src/main_new.cpp)
 
 # mac下这步很重要
 if (APPLE)

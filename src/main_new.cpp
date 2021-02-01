@@ -1,9 +1,9 @@
-#include "imgui/imgui.h"
-#include "imgui/imgui_impl_glfw.h"
-#include "imgui/imgui_impl_opengl3.h"
+#include "../imgui/imgui.h"
+#include "../imgui/imgui_impl_glfw.h"
+#include "../imgui/imgui_impl_opengl3.h"
 #include <stdio.h>
 #define STB_IMAGE_IMPLEMENTATION
-#include "stb_image.h"
+#include "../stb_image.h"
 
 #if defined(IMGUI_IMPL_OPENGL_LOADER_GL3W)
 #include <GL/gl3w.h>            // Initialize with gl3wInit()
@@ -116,35 +116,78 @@ int main(int, char**) {
     ImGui_ImplOpenGL3_Init(glsl_version);
 
     // set up state
-    bool show_another_window = true;
     bool bg_color_add = true;
-    ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
+    ImVec4 clear_color = ImVec4(0.0f, 0.0f, 0.0f, 1.00f);
 
     // create shader
     Shader shader(
-    "/Users/yvettemuki/Documents/code/OpenGL/HelloCube/1.0.cube.vs.glsl",
-    "/Users/yvettemuki/Documents/code/OpenGL/HelloCube/1.0.cube.fs.glsl"
+    "/Users/yvettemuki/Documents/code/OpenGL/HelloCube/src/1.0.cube.vs.glsl",
+    "/Users/yvettemuki/Documents/code/OpenGL/HelloCube/src/1.0.cube.fs.glsl"
     );
-
+    glColor3i(255, 180, 0);
     // set up vertex data (and buffer(s)) and configure vertex attributes
     // ------------------------------------------------------------------
+//    float vertices[] = {
+//            0.5, 0.5, 0.5, 61.0/255.0, 126.0/255.0, 170.0/255.0,
+//            -0.5, 0.5, 0.5, 61.0/255.0, 126.0/255.0, 170.0/255.0,
+//            -0.5, -0.5, 0.5, 61.0/255.0, 126.0/255.0, 170.0/255.0,
+//            0.5, -0.5, 0.5, 61.0/255.0, 126.0/255.0, 170.0/255.0,
+//            0.5, -0.5, -0.5, 1.0, 228.0/255.0, 122.0/255.0,
+//            0.5, 0.5, -0.5, 1.0, 228.0/255.0, 122.0/255.0,
+//            -0.5, 0.5, -0.5, 1.0, 228.0/255.0, 122.0/255.0,
+//            -0.5, -0.5, -0.5, 1.0, 228.0/255.0, 122.0/255.0,
+////            1.0, 1.0, 1.0, 1.0, 1.0, 1.0,  // v0 White
+////            -1.0, 1.0, 1.0, 1.0, 0.0, 1.0,  // v1 Magenta
+////            -1.0, -1.0, 1.0, 1.0, 0.0, 0.0,  // v2 Red
+////            1.0, -1.0, 1.0, 1.0, 1.0, 0.0,  // v3 Yellow
+////            1.0, -1.0, -1.0, 0.0, 1.0, 0.0,  // v4 Green
+////            1.0, 1.0, -1.0, 0.0, 1.0, 1.0,  // v5 Cyan
+////            -1.0, 1.0, -1.0, 0.0, 0.0, 1.0,  // v6 Blue
+////            -1.0, -1.0, -1.0, 0.0, 0.0, 0.0   // v7 Black
+//    };
+
     float vertices[] = {
-            0.5, 0.5, 0.5, 1.0, 1.0, 1.0,
-            -0.5, 0.5, 0.5, 1.0, 0.0, 1.0,
-            -0.5, -0.5, 0.5, 1.0, 0.0, 0.0,
-            0.5, -0.5, 0.5, 1.0, 1.0, 0.0,
-            0.5, -0.5, -0.5, 0.0, 1.0, 0.0,
-            0.5, 0.5, -0.5, 0.0, 1.0, 1.0,
-            -0.5, 0.5, -0.5, 0.0, 0.0, 1.0,
-            -0.5, -0.5, -0.5, 0.0, 0.0, 0.0
-//            1.0, 1.0, 1.0, 1.0, 1.0, 1.0,  // v0 White
-//            -1.0, 1.0, 1.0, 1.0, 0.0, 1.0,  // v1 Magenta
-//            -1.0, -1.0, 1.0, 1.0, 0.0, 0.0,  // v2 Red
-//            1.0, -1.0, 1.0, 1.0, 1.0, 0.0,  // v3 Yellow
-//            1.0, -1.0, -1.0, 0.0, 1.0, 0.0,  // v4 Green
-//            1.0, 1.0, -1.0, 0.0, 1.0, 1.0,  // v5 Cyan
-//            -1.0, 1.0, -1.0, 0.0, 0.0, 1.0,  // v6 Blue
-//            -1.0, -1.0, -1.0, 0.0, 0.0, 0.0   // v7 Black
+            -0.5f, -0.5f, -0.5f, 142.0/255.0, 84.0/255.0, 233.0/255.0,  //back
+            0.5f, -0.5f, -0.5f,  142.0/255.0, 84.0/255.0, 233.0/255.0,
+            0.5f,  0.5f, -0.5f,  142.0/255.0, 84.0/255.0, 233.0/255.0,
+            0.5f,  0.5f, -0.5f,  142.0/255.0, 84.0/255.0, 233.0/255.0,
+            -0.5f,  0.5f, -0.5f,  142.0/255.0, 84.0/255.0, 233.0/255.0,
+            -0.5f, -0.5f, -0.5f,  142.0/255.0, 84.0/255.0, 233.0/255.0,
+
+            -0.5f, -0.5f,  0.5f,  142.0/255.0, 84.0/255.0, 233.0/255.0,  //front
+            0.5f, -0.5f,  0.5f,  142.0/255.0, 84.0/255.0, 233.0/255.0,
+            0.5f,  0.5f,  0.5f,  142.0/255.0, 84.0/255.0, 233.0/255.0,
+            0.5f,  0.5f,  0.5f,  142.0/255.0, 84.0/255.0, 233.0/255.0,
+            -0.5f,  0.5f,  0.5f,  142.0/255.0, 84.0/255.0, 233.0/255.0,
+            -0.5f, -0.5f,  0.5f,  142.0/255.0, 84.0/255.0, 233.0/255.0,
+
+            -0.5f,  0.5f,  0.5f,  61.0/255.0, 126.0/255.0, 170.0/255.0, // left
+            -0.5f,  0.5f, -0.5f,  61.0/255.0, 126.0/255.0, 170.0/255.0,
+            -0.5f, -0.5f, -0.5f,  61.0/255.0, 126.0/255.0, 170.0/255.0,
+            -0.5f, -0.5f, -0.5f,  61.0/255.0, 126.0/255.0, 170.0/255.0,
+            -0.5f, -0.5f,  0.5f,  61.0/255.0, 126.0/255.0, 170.0/255.0,
+            -0.5f,  0.5f,  0.5f,  61.0/255.0, 126.0/255.0, 170.0/255.0,
+
+            0.5f,  0.5f,  0.5f,  61.0/255.0, 126.0/255.0, 170.0/255.0,  // right
+            0.5f,  0.5f, -0.5f,  61.0/255.0, 126.0/255.0, 170.0/255.0,
+            0.5f, -0.5f, -0.5f,  61.0/255.0, 126.0/255.0, 170.0/255.0,
+            0.5f, -0.5f, -0.5f,  61.0/255.0, 126.0/255.0, 170.0/255.0,
+            0.5f, -0.5f,  0.5f,  61.0/255.0, 126.0/255.0, 170.0/255.0,
+            0.5f,  0.5f,  0.5f,  61.0/255.0, 126.0/255.0, 170.0/255.0,
+
+            -0.5f, -0.5f, -0.5f,  1.0, 228.0/255.0, 122.0/255.0, // bottom
+            0.5f, -0.5f, -0.5f,  1.0, 228.0/255.0, 122.0/255.0,
+            0.5f, -0.5f,  0.5f,  1.0, 228.0/255.0, 122.0/255.0,
+            0.5f, -0.5f,  0.5f,  1.0, 228.0/255.0, 122.0/255.0,
+            -0.5f, -0.5f,  0.5f,  1.0, 228.0/255.0, 122.0/255.0,
+            -0.5f, -0.5f, -0.5f,  1.0, 228.0/255.0, 122.0/255.0,
+
+            -0.5f,  0.5f, -0.5f,  1.0, 228.0/255.0, 122.0/255.0,  // top
+            0.5f,  0.5f, -0.5f, 1.0, 228.0/255.0, 122.0/255.0,
+            0.5f,  0.5f,  0.5f,  1.0, 228.0/255.0, 122.0/255.0,
+            0.5f,  0.5f,  0.5f,  1.0, 228.0/255.0, 122.0/255.0,
+            -0.5f,  0.5f,  0.5f,  1.0, 228.0/255.0, 122.0/255.0,
+            -0.5f,  0.5f, -0.5f,  1.0, 228.0/255.0, 122.0/255.0,
     };
 
     unsigned int indices[] = {
@@ -159,7 +202,7 @@ int main(int, char**) {
     unsigned int VAO, VBO, EBO;
     glGenVertexArrays(1, &VAO);
     glGenBuffers(1, &VBO);
-    glGenBuffers(1, &EBO);
+//    glGenBuffers(1, &EBO);
 
     // bind the Vertex Array Object first, then bind and set vertex buffer(s), and then configure vertex attributes(s).
     glBindVertexArray(VAO);
@@ -167,8 +210,8 @@ int main(int, char**) {
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
+//    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+//    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
@@ -184,7 +227,7 @@ int main(int, char**) {
     glBindVertexArray(0);
 
     glEnable(GL_DEPTH_TEST);
-
+    glDepthFunc(GL_LESS);
 
     // Main loop
     while (!glfwWindowShouldClose(window))
@@ -201,28 +244,29 @@ int main(int, char**) {
         ImGui_ImplGlfw_NewFrame();
         ImGui::NewFrame();
 
-        // 3. Show another simple window.
-        if (show_another_window)
+        // 3. Show the simple window.
+        bool show_another_window;
+        ImGui::Begin("Control Panel", &show_another_window);   // Pass a pointer to our bool variable (the window will have a closing button that will clear the bool when clicked)
+        ImGui::Text("try to click the buttons");
+        if (ImGui::Button("Change Background Color"))
         {
-            ImGui::Begin("Another Window", &show_another_window);   // Pass a pointer to our bool variable (the window will have a closing button that will clear the bool when clicked)
-            ImGui::Text("Hello from another window!");
-            if (ImGui::Button("Change Background Color"))
-            {
-                if (clear_color.x < 0.9f && bg_color_add) {
-                    clear_color.x += 0.1f;
-                    if (clear_color.x >= 0.9f)
-                        bg_color_add = false;
-                }
-                else if (clear_color.x > 0.2f && !bg_color_add)
-                {
-                    clear_color.x -= 0.1f;
-                    if (clear_color.x <= 0.2f)
-                        bg_color_add = true;
-                }
+            if (clear_color.x < 0.9f && bg_color_add) {
+                clear_color.x += 0.1f;
+                if (clear_color.x >= 0.9f)
+                    bg_color_add = false;
             }
-            ImGui::End();
+            else if (clear_color.x > 0.2f && !bg_color_add)
+            {
+                clear_color.x -= 0.1f;
+                if (clear_color.x <= 0.2f)
+                    bg_color_add = true;
+            }
         }
-
+        if (ImGui::Button("Change the Cube Color"))
+        {
+            std::cout << "test change color" << std::endl;
+        }
+        ImGui::End();
 
         // Rendering
         ImGui::Render();
@@ -235,7 +279,7 @@ int main(int, char**) {
         // draw cubes
         shader.use();
         glm::mat4 model = glm::mat4(1.0f);
-        model = glm::rotate(model, glm::radians(-55.0f), glm::vec3(1.0f, 1.0f, 0.0f)); // rotate by x
+        model = glm::rotate(model, glm::radians(55.0f), glm::vec3(1.0f, 1.0f, 0.0f)); // rotate by x
         glm::mat4 view = glm::mat4(1.0f);
         view = glm::translate(view, glm::vec3(0.0f, 0.0f, -5.0f));
         glm::mat4 projection = glm::mat4(1.0f);
@@ -244,7 +288,8 @@ int main(int, char**) {
         shader.setMat4("view", view);
         shader.setMat4("projection", projection);
         glBindVertexArray(VAO);
-        glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
+//        glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
+        glDrawArrays(GL_TRIANGLES, 0, 36);
         glBindVertexArray(0);
 
         ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
