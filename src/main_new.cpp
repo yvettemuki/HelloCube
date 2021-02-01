@@ -68,7 +68,7 @@ int main(int, char**) {
 #endif
 
     // Create window with graphics context
-    GLFWwindow *window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "Dear ImGui GLFW+OpenGL3 example", NULL, NULL);
+    GLFWwindow *window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "Hello Cube", NULL, NULL);
     if (window == NULL)
         return 1;
     glfwMakeContextCurrent(window);
@@ -265,6 +265,10 @@ int main(int, char**) {
         if (ImGui::Button("Change the Cube Color"))
         {
             std::cout << "test change color" << std::endl;
+        }
+        if (ImGui::Button("Set cube change by time"))
+        {
+
         }
         ImGui::End();
 
