@@ -52,10 +52,6 @@ CMakeFiles/HelloCube.dir/imgui/imgui_widgets.cpp.o: ../imgui/imgui_internal.h
 CMakeFiles/HelloCube.dir/imgui/imgui_widgets.cpp.o: ../imgui/imgui_widgets.cpp
 CMakeFiles/HelloCube.dir/imgui/imgui_widgets.cpp.o: ../imgui/imstb_textedit.h
 
-CMakeFiles/HelloCube.dir/main.cpp.o: ../main.cpp
-
-CMakeFiles/HelloCube.dir/main2.cpp.o: ../main2.cpp
-
 CMakeFiles/HelloCube.dir/main_new.cpp.o: ../MyShader.h
 CMakeFiles/HelloCube.dir/main_new.cpp.o: ../imgui/imconfig.h
 CMakeFiles/HelloCube.dir/main_new.cpp.o: ../imgui/imgui.h

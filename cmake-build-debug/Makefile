@@ -359,60 +359,6 @@ imgui/imgui_widgets.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/HelloCube.dir/build.make CMakeFiles/HelloCube.dir/imgui/imgui_widgets.cpp.s
 .PHONY : imgui/imgui_widgets.cpp.s
 
-main.o: main.cpp.o
-
-.PHONY : main.o
-
-# target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/HelloCube.dir/build.make CMakeFiles/HelloCube.dir/main.cpp.o
-.PHONY : main.cpp.o
-
-main.i: main.cpp.i
-
-.PHONY : main.i
-
-# target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/HelloCube.dir/build.make CMakeFiles/HelloCube.dir/main.cpp.i
-.PHONY : main.cpp.i
-
-main.s: main.cpp.s
-
-.PHONY : main.s
-
-# target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/HelloCube.dir/build.make CMakeFiles/HelloCube.dir/main.cpp.s
-.PHONY : main.cpp.s
-
-main2.o: main2.cpp.o
-
-.PHONY : main2.o
-
-# target to build an object file
-main2.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/HelloCube.dir/build.make CMakeFiles/HelloCube.dir/main2.cpp.o
-.PHONY : main2.cpp.o
-
-main2.i: main2.cpp.i
-
-.PHONY : main2.i
-
-# target to preprocess a source file
-main2.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/HelloCube.dir/build.make CMakeFiles/HelloCube.dir/main2.cpp.i
-.PHONY : main2.cpp.i
-
-main2.s: main2.cpp.s
-
-.PHONY : main2.s
-
-# target to generate assembly for a file
-main2.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/HelloCube.dir/build.make CMakeFiles/HelloCube.dir/main2.cpp.s
-.PHONY : main2.cpp.s
-
 main_new.o: main_new.cpp.o
 
 .PHONY : main_new.o
@@ -500,12 +446,6 @@ help:
 	@echo "... imgui/imgui_widgets.o"
 	@echo "... imgui/imgui_widgets.i"
 	@echo "... imgui/imgui_widgets.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
-	@echo "... main2.o"
-	@echo "... main2.i"
-	@echo "... main2.s"
 	@echo "... main_new.o"
 	@echo "... main_new.i"
 	@echo "... main_new.s"

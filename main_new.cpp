@@ -44,27 +44,6 @@ static void glfw_error_callback(int error, const char* description)
     fprintf(stderr, "Glfw Error %d: %s\n", error, description);
 }
 
-const char *vertexShaderSource = "#version 330 core\n"
-                                 "layout (location = 0) in vec3 aPos;\n"
-                                 "layout (location = 1) in vec3 aColor;\n"
-                                 "out vec3 myColor;\n"
-                                 "uniform mat4 model;\n"
-                                 "uniform mat4 view;\n"
-                                 "uniform mat4 projection;\n"
-                                 "void main()\n"
-                                 "{\n"
-                                 "   gl_Position = projection * view * model * vec4(aPos, 1.0);\n"
-                                 "   myColor = aColor;\n"
-                                 "}\0";
-const char *fragmentShaderSource = "#version 330 core\n"
-                                   "in vec3 myColor;\n"
-                                   "out vec4 FragColor;\n"
-                                   "void main()\n"
-                                   "{\n"
-                                   "   FragColor = vec4(myColor, 1.0f);\n"
-                                   "}\n\0";
-
-
 int main(int, char**) {
     // Setup window
     glfwSetErrorCallback(glfw_error_callback);
@@ -254,7 +233,6 @@ int main(int, char**) {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         // draw cubes
-        // glUseProgram(shaderProgram);
         shader.use();
         glm::mat4 model = glm::mat4(1.0f);
         model = glm::rotate(model, glm::radians(-55.0f), glm::vec3(1.0f, 1.0f, 0.0f)); // rotate by x
@@ -262,12 +240,6 @@ int main(int, char**) {
         view = glm::translate(view, glm::vec3(0.0f, 0.0f, -5.0f));
         glm::mat4 projection = glm::mat4(1.0f);
         projection = glm::perspective(glm::radians(45.0f), (float)display_h / (float)display_w, 0.1f, 100.0f);
-//        int modelLoc = glGetUniformLocation(shaderProgram, "model");
-//        glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-//        int viewLoc = glGetUniformLocation(shaderProgram, "view");
-//        glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
-//        int projectionLoc = glGetUniformLocation(shaderProgram, "projection");
-//        glUniformMatrix4fv(projectionLoc, 1, GL_FALSE, glm::value_ptr(projection));
         shader.setMat4("model", model);
         shader.setMat4("view", view);
         shader.setMat4("projection", projection);
@@ -287,7 +259,6 @@ int main(int, char**) {
     glDeleteVertexArrays(1, &VAO);
     glDeleteBuffers(1, &VBO);
     glDeleteBuffers(1, &EBO);
-//    glDeleteProgram(shaderProgram);
     glfwDestroyWindow(window);
     glfwTerminate();
 

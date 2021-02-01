@@ -88,9 +88,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/yvettemuki/Documents/code/OpenGL/HelloCube/camera.h">
-			<Option target="HelloCube"/>
-		</Unit>
 		<Unit filename="/Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imconfig.h">
 			<Option target="HelloCube"/>
 		</Unit>
@@ -139,22 +136,7 @@
 		<Unit filename="/Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imstb_truetype.h">
 			<Option target="HelloCube"/>
 		</Unit>
-		<Unit filename="/Users/yvettemuki/Documents/code/OpenGL/HelloCube/main.cpp">
-			<Option target="HelloCube"/>
-		</Unit>
-		<Unit filename="/Users/yvettemuki/Documents/code/OpenGL/HelloCube/main2.cpp">
-			<Option target="HelloCube"/>
-		</Unit>
 		<Unit filename="/Users/yvettemuki/Documents/code/OpenGL/HelloCube/main_new.cpp">
-			<Option target="HelloCube"/>
-		</Unit>
-		<Unit filename="/Users/yvettemuki/Documents/code/OpenGL/HelloCube/mesh.h">
-			<Option target="HelloCube"/>
-		</Unit>
-		<Unit filename="/Users/yvettemuki/Documents/code/OpenGL/HelloCube/model.h">
-			<Option target="HelloCube"/>
-		</Unit>
-		<Unit filename="/Users/yvettemuki/Documents/code/OpenGL/HelloCube/src/MyShader.h">
 			<Option target="HelloCube"/>
 		</Unit>
 		<Unit filename="/Users/yvettemuki/Documents/code/OpenGL/HelloCube/src/glad.c">
