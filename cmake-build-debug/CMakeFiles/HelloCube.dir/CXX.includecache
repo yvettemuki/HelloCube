@@ -6,6 +6,18 @@
 
 #IncludeRegexTransform: 
 
+/Users/yvettemuki/Documents/code/OpenGL/HelloCube/MyShader.h
+glm/glm.hpp
+/Users/yvettemuki/Documents/code/OpenGL/HelloCube/glm/glm.hpp
+string
+-
+fstream
+-
+sstream
+-
+iostream
+-
+
 /Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imconfig.h
 
 /Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imgui.h
@@ -67,12 +79,12 @@ GLFW/glfw3.h
 -
 iostream
 -
-glm/glm.hpp
--
 glm/gtc/matrix_transform.hpp
 -
 glm/gtc/type_ptr.hpp
 -
+MyShader.h
+/Users/yvettemuki/Documents/code/OpenGL/HelloCube/MyShader.h
 
 /Users/yvettemuki/Documents/code/OpenGL/HelloCube/stb_image.h
 stb_image.h

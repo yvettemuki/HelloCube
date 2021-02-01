@@ -56,6 +56,7 @@ CMakeFiles/HelloCube.dir/main.cpp.o: ../main.cpp
 
 CMakeFiles/HelloCube.dir/main2.cpp.o: ../main2.cpp
 
+CMakeFiles/HelloCube.dir/main_new.cpp.o: ../MyShader.h
 CMakeFiles/HelloCube.dir/main_new.cpp.o: ../imgui/imconfig.h
 CMakeFiles/HelloCube.dir/main_new.cpp.o: ../imgui/imgui.h
 CMakeFiles/HelloCube.dir/main_new.cpp.o: ../imgui/imgui_impl_glfw.h

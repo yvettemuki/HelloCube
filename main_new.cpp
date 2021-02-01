@@ -1,8 +1,3 @@
-// Dear ImGui: standalone example application for GLFW + OpenGL 3, using programmable pipeline
-// (GLFW is a cross-platform general purpose library for handling windows, inputs, OpenGL/Vulkan/Metal graphics context creation, etc.)
-// If you are new to Dear ImGui, read documentation from the docs/ folder + read the top of imgui.cpp.
-// Read online: https://github.com/ocornut/imgui/tree/master/docs
-
 #include "imgui/imgui.h"
 #include "imgui/imgui_impl_glfw.h"
 #include "imgui/imgui_impl_opengl3.h"
@@ -10,10 +5,6 @@
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
 
-// About Desktop OpenGL function loaders:
-//  Modern desktop OpenGL doesn't have a standard portable header file to load OpenGL function pointers.
-//  Helper libraries are often used for this purpose! Here we are supporting a few common ones (gl3w, glew, glad).
-//  You may use another loader/header of your choice (glext, glLoadGen, etc.), or chose to manually implement your own.
 #if defined(IMGUI_IMPL_OPENGL_LOADER_GL3W)
 #include <GL/gl3w.h>            // Initialize with gl3wInit()
 #elif defined(IMGUI_IMPL_OPENGL_LOADER_GLEW)
@@ -39,17 +30,9 @@ using namespace gl;
 // Include glfw3.h after our OpenGL definitions
 #include <GLFW/glfw3.h>
 #include <iostream>
-#include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
-//#include "../src/camera.h"
-
-// [Win32] Our example includes a copy of glfw3.lib pre-compiled with VS2010 to maximize ease of testing and compatibility with old VS compilers.
-// To link with VS2010-era libraries, VS2015+ requires linking with legacy_stdio_definitions.lib, which we do using this pragma.
-// Your own project should not be affected, as you are likely to link with a newer binary of GLFW that is adequate for your version of Visual Studio.
-#if defined(_MSC_VER) && (_MSC_VER >= 1900) && !defined(IMGUI_DISABLE_WIN32_FUNCTIONS)
-#pragma comment(lib, "legacy_stdio_definitions")
-#endif
+#include "MyShader.h"
 
 unsigned int loadTexture(const char* path);
 // settings
@@ -80,11 +63,6 @@ const char *fragmentShaderSource = "#version 330 core\n"
                                    "{\n"
                                    "   FragColor = vec4(myColor, 1.0f);\n"
                                    "}\n\0";
-// camera
-//Camera camera(glm::vec3(0.0f, 0.0f, 3.0f));
-//float lastX = (float)SCR_WIDTH / 2.0;
-//float lastY = (float)SCR_HEIGHT / 2.0;
-//bool firstMouse = true;
 
 
 int main(int, char**) {
@@ -117,7 +95,7 @@ int main(int, char**) {
     glfwMakeContextCurrent(window);
     glfwSwapInterval(1); // Enable vsync
 
-    // Initialize OpenGL loader
+     // Initialize OpenGL loader
 #if defined(IMGUI_IMPL_OPENGL_LOADER_GL3W)
     bool err = gl3wInit() != 0;
 #elif defined(IMGUI_IMPL_OPENGL_LOADER_GLEW)
@@ -135,10 +113,12 @@ int main(int, char**) {
 #else
     bool err = false; // If you use IMGUI_IMPL_OPENGL_LOADER_CUSTOM, your loader is likely to requires some form of initialization.
 #endif
+
     if (err) {
         fprintf(stderr, "Failed to initialize OpenGL loader!\n");
         return 1;
     }
+
 
     // Setup Dear ImGui context
     IMGUI_CHECKVERSION();
@@ -161,44 +141,11 @@ int main(int, char**) {
     bool bg_color_add = true;
     ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
 
-    // build and compile our shader program
-    // ------------------------------------
-    // vertex shader
-    unsigned int vertexShader = glCreateShader(GL_VERTEX_SHADER);
-    glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
-    glCompileShader(vertexShader);
-    // check for shader compile errors
-    int success;
-    char infoLog[512];
-    glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &success);
-    if (!success) {
-        glGetShaderInfoLog(vertexShader, 512, NULL, infoLog);
-        std::cout << "ERROR::SHADER::VERTEX::COMPILATION_FAILED\n" << infoLog << std::endl;
-    }
-    // fragment shader
-    unsigned int fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
-    glShaderSource(fragmentShader, 1, &fragmentShaderSource, NULL);
-    glCompileShader(fragmentShader);
-    // check for shader compile errors
-    glGetShaderiv(fragmentShader, GL_COMPILE_STATUS, &success);
-    if (!success) {
-        glGetShaderInfoLog(fragmentShader, 512, NULL, infoLog);
-        std::cout << "ERROR::SHADER::FRAGMENT::COMPILATION_FAILED\n" << infoLog << std::endl;
-    }
-    // link shaders
-    unsigned int shaderProgram = glCreateProgram();
-    glAttachShader(shaderProgram, vertexShader);
-    glAttachShader(shaderProgram, fragmentShader);
-    glLinkProgram(shaderProgram);
-    // check for linking errors
-    glGetProgramiv(shaderProgram, GL_LINK_STATUS, &success);
-    if (!success) {
-        glGetProgramInfoLog(shaderProgram, 512, NULL, infoLog);
-        std::cout << "ERROR::SHADER::PROGRAM::LINKING_FAILED\n" << infoLog << std::endl;
-    }
-    glDeleteShader(vertexShader);
-    glDeleteShader(fragmentShader);
-
+    // create shader
+    Shader shader(
+    "/Users/yvettemuki/Documents/code/OpenGL/HelloCube/1.0.cube.vs.glsl",
+    "/Users/yvettemuki/Documents/code/OpenGL/HelloCube/1.0.cube.fs.glsl"
+    );
 
     // set up vertex data (and buffer(s)) and configure vertex attributes
     // ------------------------------------------------------------------
@@ -220,40 +167,14 @@ int main(int, char**) {
 //            -1.0, 1.0, -1.0, 0.0, 0.0, 1.0,  // v6 Blue
 //            -1.0, -1.0, -1.0, 0.0, 0.0, 0.0   // v7 Black
     };
-//
-//    //顶点索引
-//    static const GLfloat indices[] = {
-//        0, 1, 2, 0, 2, 3,    // 前
-//        0, 3, 4, 0, 4, 5,    // 右
-//        0, 5, 6, 0, 6, 1,    // 上
-//        1, 6, 7, 1, 7, 2,    // 左
-//        7, 4, 3, 7, 3, 2,    // 下
-//        4, 7, 6, 4, 6, 5     // 后
-//    };
 
-//    float vertices[] = {
-////            0.5f,  0.5f, 0.0f,  // top right
-////            0.5f, -0.5f, 0.0f,  // bottom right
-////            -0.5f, -0.5f, 0.0f,  // bottom left
-////            -0.5f,  0.5f, 0.0f   // top left
-//            0.5, 0.5, 0.5,
-//            -0.5, 0.5, 0.5,
-//            -0.5, -0.5, 0.5,
-//            0.5, -0.5, 0.5,
-//            0.8, -0.5, -0.5,
-//            0.5, 0.5, -0.5,
-//            -0.5, 0.5, -0.5,
-//            -0.5, -0.5, -0.5,
-//    };
-    unsigned int indices[] = {  // note that we start from 0!
-//            0, 1, 3,  // first Triangle
-//            1, 2, 3   // second Triangle
-        0, 1, 2, 0, 2, 3,    // 前
-        0, 3, 4, 0, 4, 5,    // 右
-        0, 5, 6, 0, 6, 1,    // 上
-        1, 6, 7, 1, 7, 2,    // 左
-        7, 4, 3, 7, 3, 2,    // 下
-        4, 7, 6, 4, 6, 5     // 后
+    unsigned int indices[] = {
+        0, 1, 2, 0, 2, 3,    // front
+        0, 3, 4, 0, 4, 5,    // right
+        0, 5, 6, 0, 6, 1,    // up
+        1, 6, 7, 1, 7, 2,    // left
+        7, 4, 3, 7, 3, 2,    // down
+        4, 7, 6, 4, 6, 5     // back
     };
 
     unsigned int VAO, VBO, EBO;
@@ -295,8 +216,6 @@ int main(int, char**) {
         // - When io.WantCaptureKeyboard is true, do not dispatch keyboard input data to your main application.
         // Generally you may always pass all inputs to dear imgui, and hide them from your application based on those two flags.
         glfwPollEvents();
-//        glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-//        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         //Start the Dear ImGui frame
         ImGui_ImplOpenGL3_NewFrame();
@@ -335,19 +254,23 @@ int main(int, char**) {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         // draw cubes
-        glUseProgram(shaderProgram);
+        // glUseProgram(shaderProgram);
+        shader.use();
         glm::mat4 model = glm::mat4(1.0f);
         model = glm::rotate(model, glm::radians(-55.0f), glm::vec3(1.0f, 1.0f, 0.0f)); // rotate by x
         glm::mat4 view = glm::mat4(1.0f);
         view = glm::translate(view, glm::vec3(0.0f, 0.0f, -5.0f));
         glm::mat4 projection = glm::mat4(1.0f);
         projection = glm::perspective(glm::radians(45.0f), (float)display_h / (float)display_w, 0.1f, 100.0f);
-        int modelLoc = glGetUniformLocation(shaderProgram, "model");
-        glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-        int viewLoc = glGetUniformLocation(shaderProgram, "view");
-        glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
-        int projectionLoc = glGetUniformLocation(shaderProgram, "projection");
-        glUniformMatrix4fv(projectionLoc, 1, GL_FALSE, glm::value_ptr(projection));
+//        int modelLoc = glGetUniformLocation(shaderProgram, "model");
+//        glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+//        int viewLoc = glGetUniformLocation(shaderProgram, "view");
+//        glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
+//        int projectionLoc = glGetUniformLocation(shaderProgram, "projection");
+//        glUniformMatrix4fv(projectionLoc, 1, GL_FALSE, glm::value_ptr(projection));
+        shader.setMat4("model", model);
+        shader.setMat4("view", view);
+        shader.setMat4("projection", projection);
         glBindVertexArray(VAO);
         glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
         glBindVertexArray(0);
@@ -364,7 +287,7 @@ int main(int, char**) {
     glDeleteVertexArrays(1, &VAO);
     glDeleteBuffers(1, &VBO);
     glDeleteBuffers(1, &EBO);
-    glDeleteProgram(shaderProgram);
+//    glDeleteProgram(shaderProgram);
     glfwDestroyWindow(window);
     glfwTerminate();
 
