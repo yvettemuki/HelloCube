@@ -139,6 +139,9 @@
 		<Unit filename="/Users/yvettemuki/Documents/code/OpenGL/HelloCube/src/glad.c">
 			<Option target="HelloCube"/>
 		</Unit>
+		<Unit filename="/Users/yvettemuki/Documents/code/OpenGL/HelloCube/src/global.h">
+			<Option target="HelloCube"/>
+		</Unit>
 		<Unit filename="/Users/yvettemuki/Documents/code/OpenGL/HelloCube/src/main_new.cpp">
 			<Option target="HelloCube"/>
 		</Unit>

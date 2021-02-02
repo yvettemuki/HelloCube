@@ -33,6 +33,8 @@ using namespace gl;
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 #include "MyShader.h"
+#include "global.h"
+#include "../imgui/imgui_internal.h"
 
 unsigned int loadTexture(const char* path);
 // settings
@@ -43,6 +45,17 @@ static void glfw_error_callback(int error, const char* description)
 {
     fprintf(stderr, "Glfw Error %d: %s\n", error, description);
 }
+
+inline float to_radius(float degree)
+{
+    return degree * IM_PI / 180.0f;
+}
+
+inline float to_degree(float radius)
+{
+    return radius * 180.0f / IM_PI;
+}
+
 
 int main(int, char**) {
     // Setup window
@@ -116,7 +129,7 @@ int main(int, char**) {
     ImGui_ImplOpenGL3_Init(glsl_version);
 
     // set up state
-    bool bg_color_add = true;
+    bool cube_change_by_time = false;
     ImVec4 clear_color = ImVec4(0.0f, 0.0f, 0.0f, 1.00f);
 
     // create shader
@@ -248,28 +261,20 @@ int main(int, char**) {
         bool show_another_window;
         ImGui::Begin("Control Panel", &show_another_window);   // Pass a pointer to our bool variable (the window will have a closing button that will clear the bool when clicked)
         ImGui::Text("try to click the buttons");
-        if (ImGui::Button("Change Background Color"))
-        {
-            if (clear_color.x < 0.9f && bg_color_add) {
-                clear_color.x += 0.1f;
-                if (clear_color.x >= 0.9f)
-                    bg_color_add = false;
-            }
-            else if (clear_color.x > 0.2f && !bg_color_add)
-            {
-                clear_color.x -= 0.1f;
-                if (clear_color.x <= 0.2f)
-                    bg_color_add = true;
-            }
-        }
         if (ImGui::Button("Change the Cube Color"))
         {
             std::cout << "test change color" << std::endl;
         }
-        if (ImGui::Button("Set cube change by time"))
-        {
-
-        }
+        ImGui::Checkbox("set cube change by time", &cube_change_by_time);
+        ImGui::Text("Edit Background Color");
+        ImGui::ColorEdit3("clear color", (float*)&clear_color);
+        float x_radius;
+        float y_radius;
+        float z_radius;
+        ImGui::SliderAngle("x-axis", &x_radius, -180.0f, 180.0f);
+        ImGui::SliderAngle("y-axis", &y_radius, -180.0f, 180.0f);
+        ImGui::SliderAngle("z-axis", &z_radius, -180.0f, 180.0f);
+        ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
         ImGui::End();
 
         // Rendering
@@ -280,10 +285,24 @@ int main(int, char**) {
         glClearColor(clear_color.x, clear_color.y, clear_color.z, clear_color.w);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+        // detecting imgui setting
+        if (cube_change_by_time)
+        {
+            float time = glfwGetTime();
+            shader.setFloat("time", time);
+        }
+        else
+        {
+            shader.setFloat("time", 1);
+        }
+
+
         // draw cubes
         shader.use();
         glm::mat4 model = glm::mat4(1.0f);
-        model = glm::rotate(model, glm::radians(55.0f), glm::vec3(1.0f, 1.0f, 0.0f)); // rotate by x
+        model = glm::rotate(model, glm::radians(to_degree(x_radius)), glm::vec3(1.0f, 0.0f, 0.0f)); // rotate by x
+        model = glm::rotate(model, glm::radians(to_degree(y_radius)), glm::vec3(0.0f, 1.0f, 0.0f)); // rotate by x
+        model = glm::rotate(model, glm::radians(to_degree(z_radius)), glm::vec3(0.0f, 0.0f, 1.0f)); // rotate by x
         glm::mat4 view = glm::mat4(1.0f);
         view = glm::translate(view, glm::vec3(0.0f, 0.0f, -5.0f));
         glm::mat4 projection = glm::mat4(1.0f);

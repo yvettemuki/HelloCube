@@ -36,7 +36,7 @@ set(SOURCE_FILES "src/glad.c"
         imgui/imgui_widgets.cpp
         imgui/imstb_rectpack.h
         imgui/imstb_textedit.h
-        imgui/imstb_truetype.h)
+        imgui/imstb_truetype.h src/global.h)
 
 add_executable(HelloCube ${SOURCE_FILES} imgui/imgui_main.cpp src/main_new.cpp)
 

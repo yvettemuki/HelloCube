@@ -36,6 +36,22 @@ imgui.h
 TargetConditionals.h
 /Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/TargetConditionals.h
 
+/Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imgui_internal.h
+stdio.h
+-
+stdlib.h
+-
+math.h
+-
+limits.h
+-
+imstb_textedit.h
+/Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imstb_textedit.h
+
+/Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imstb_textedit.h
+string.h
+-
+
 /Users/yvettemuki/Documents/code/OpenGL/HelloCube/src/MyShader.h
 glm/glm.hpp
 /Users/yvettemuki/Documents/code/OpenGL/HelloCube/src/glm/glm.hpp
@@ -47,6 +63,8 @@ sstream
 -
 iostream
 -
+
+/Users/yvettemuki/Documents/code/OpenGL/HelloCube/src/global.h
 
 /Users/yvettemuki/Documents/code/OpenGL/HelloCube/src/main_new.cpp
 ../imgui/imgui.h
@@ -85,6 +103,10 @@ glm/gtc/type_ptr.hpp
 -
 MyShader.h
 /Users/yvettemuki/Documents/code/OpenGL/HelloCube/src/MyShader.h
+global.h
+/Users/yvettemuki/Documents/code/OpenGL/HelloCube/src/global.h
+../imgui/imgui_internal.h
+/Users/yvettemuki/Documents/code/OpenGL/HelloCube/imgui/imgui_internal.h
 
 /Users/yvettemuki/Documents/code/OpenGL/HelloCube/stb_image.h
 stb_image.h

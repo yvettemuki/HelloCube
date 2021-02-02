@@ -56,7 +56,10 @@ CMakeFiles/HelloCube.dir/src/main_new.cpp.o: ../imgui/imconfig.h
 CMakeFiles/HelloCube.dir/src/main_new.cpp.o: ../imgui/imgui.h
 CMakeFiles/HelloCube.dir/src/main_new.cpp.o: ../imgui/imgui_impl_glfw.h
 CMakeFiles/HelloCube.dir/src/main_new.cpp.o: ../imgui/imgui_impl_opengl3.h
+CMakeFiles/HelloCube.dir/src/main_new.cpp.o: ../imgui/imgui_internal.h
+CMakeFiles/HelloCube.dir/src/main_new.cpp.o: ../imgui/imstb_textedit.h
 CMakeFiles/HelloCube.dir/src/main_new.cpp.o: ../src/MyShader.h
+CMakeFiles/HelloCube.dir/src/main_new.cpp.o: ../src/global.h
 CMakeFiles/HelloCube.dir/src/main_new.cpp.o: ../src/main_new.cpp
 CMakeFiles/HelloCube.dir/src/main_new.cpp.o: ../stb_image.h
 CMakeFiles/HelloCube.dir/src/main_new.cpp.o: /usr/local/Cellar/glfw/3.3.2/include/GLFW/glfw3.h
