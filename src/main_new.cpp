@@ -130,6 +130,8 @@ int main(int, char**) {
 
     // set up state
     bool cube_change_by_time = false;
+    bool cover_by_color = true;
+    bool cover_by_wood_texture = false;
     ImVec4 clear_color = ImVec4(0.0f, 0.0f, 0.0f, 1.00f);
 
     // create shader
@@ -253,9 +255,9 @@ int main(int, char**) {
         ImGui_ImplGlfw_NewFrame();
         ImGui::NewFrame();
 
-        // 3. Show the simple window.
-        bool show_another_window;
-        ImGui::Begin("Control Panel", &show_another_window);   // Pass a pointer to our bool variable (the window will have a closing button that will clear the bool when clicked)
+        // Show the control panel window.
+        bool control_panel_window;
+        ImGui::Begin("Control Panel", &control_panel_window);   // Pass a pointer to our bool variable (the window will have a closing button that will clear the bool when clicked)
         ImGui::Text("try to click the buttons");
         if (ImGui::Button("Change the Cube Color"))
         {
@@ -271,6 +273,14 @@ int main(int, char**) {
         ImGui::SliderAngle("y-axis", &y_radius, -180.0f, 180.0f);
         ImGui::SliderAngle("z-axis", &z_radius, -180.0f, 180.0f);
         ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
+        ImGui::End();
+
+
+        bool attribute_setting_window;
+        ImGui::Begin("Attribute Setting", &attribute_setting_window);
+//        ImGui::SetNextWindowPos(ImVec2(80, 80));
+        ImGui::Checkbox("Cover by Color", &cover_by_color);
+        ImGui::Checkbox("Cover by Wood Texture", &cover_by_wood_texture);
         ImGui::End();
 
         // Rendering
@@ -290,6 +300,16 @@ int main(int, char**) {
         else
         {
             shader.setFloat("time", 1);
+        }
+
+        // detecting shaderType
+        if (cover_by_color)
+        {
+            shader.setInt("shaderType", 0);
+        }
+        else if (cover_by_wood_texture)
+        {
+            shader.setInt("shaderType", 1);
         }
 
 

@@ -5,9 +5,17 @@ in vec2 myTexCoord;
 out vec4 FragColor;
 
 uniform sampler2D texture1;
+uniform int shaderType;
 
 void main()
 {
-//    FragColor = vec4(myColor, 1.0f);
-    FragColor = texture(texture1, myTexCoord);
+    if (shaderType == 0)
+    {
+        FragColor = vec4(myColor, 1.0f);
+    }
+    else if (shaderType == 1)
+    {
+
+        FragColor = texture(texture1, myTexCoord);
+    }
 }
