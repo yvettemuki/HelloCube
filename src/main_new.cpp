@@ -140,68 +140,6 @@ int main(int, char**) {
     glColor3i(255, 180, 0);
     // set up vertex data (and buffer(s)) and configure vertex attributes
     // ------------------------------------------------------------------
-//    float vertices[] = {
-//            0.5, 0.5, 0.5, 61.0/255.0, 126.0/255.0, 170.0/255.0,
-//            -0.5, 0.5, 0.5, 61.0/255.0, 126.0/255.0, 170.0/255.0,
-//            -0.5, -0.5, 0.5, 61.0/255.0, 126.0/255.0, 170.0/255.0,
-//            0.5, -0.5, 0.5, 61.0/255.0, 126.0/255.0, 170.0/255.0,
-//            0.5, -0.5, -0.5, 1.0, 228.0/255.0, 122.0/255.0,
-//            0.5, 0.5, -0.5, 1.0, 228.0/255.0, 122.0/255.0,
-//            -0.5, 0.5, -0.5, 1.0, 228.0/255.0, 122.0/255.0,
-//            -0.5, -0.5, -0.5, 1.0, 228.0/255.0, 122.0/255.0,
-////            1.0, 1.0, 1.0, 1.0, 1.0, 1.0,  // v0 White
-////            -1.0, 1.0, 1.0, 1.0, 0.0, 1.0,  // v1 Magenta
-////            -1.0, -1.0, 1.0, 1.0, 0.0, 0.0,  // v2 Red
-////            1.0, -1.0, 1.0, 1.0, 1.0, 0.0,  // v3 Yellow
-////            1.0, -1.0, -1.0, 0.0, 1.0, 0.0,  // v4 Green
-////            1.0, 1.0, -1.0, 0.0, 1.0, 1.0,  // v5 Cyan
-////            -1.0, 1.0, -1.0, 0.0, 0.0, 1.0,  // v6 Blue
-////            -1.0, -1.0, -1.0, 0.0, 0.0, 0.0   // v7 Black
-//    };
-
-//    float vertices[] = {
-//            -0.5f, -0.5f, -0.5f, 142.0/255.0, 84.0/255.0, 233.0/255.0,  //back
-//            0.5f, -0.5f, -0.5f,  142.0/255.0, 84.0/255.0, 233.0/255.0,
-//            0.5f,  0.5f, -0.5f,  142.0/255.0, 84.0/255.0, 233.0/255.0,
-//            0.5f,  0.5f, -0.5f,  142.0/255.0, 84.0/255.0, 233.0/255.0,
-//            -0.5f,  0.5f, -0.5f,  142.0/255.0, 84.0/255.0, 233.0/255.0,
-//            -0.5f, -0.5f, -0.5f,  142.0/255.0, 84.0/255.0, 233.0/255.0,
-//
-//            -0.5f, -0.5f,  0.5f,  142.0/255.0, 84.0/255.0, 233.0/255.0,  //front
-//            0.5f, -0.5f,  0.5f,  142.0/255.0, 84.0/255.0, 233.0/255.0,
-//            0.5f,  0.5f,  0.5f,  142.0/255.0, 84.0/255.0, 233.0/255.0,
-//            0.5f,  0.5f,  0.5f,  142.0/255.0, 84.0/255.0, 233.0/255.0,
-//            -0.5f,  0.5f,  0.5f,  142.0/255.0, 84.0/255.0, 233.0/255.0,
-//            -0.5f, -0.5f,  0.5f,  142.0/255.0, 84.0/255.0, 233.0/255.0,
-//
-//            -0.5f,  0.5f,  0.5f,  61.0/255.0, 126.0/255.0, 170.0/255.0, // left
-//            -0.5f,  0.5f, -0.5f,  61.0/255.0, 126.0/255.0, 170.0/255.0,
-//            -0.5f, -0.5f, -0.5f,  61.0/255.0, 126.0/255.0, 170.0/255.0,
-//            -0.5f, -0.5f, -0.5f,  61.0/255.0, 126.0/255.0, 170.0/255.0,
-//            -0.5f, -0.5f,  0.5f,  61.0/255.0, 126.0/255.0, 170.0/255.0,
-//            -0.5f,  0.5f,  0.5f,  61.0/255.0, 126.0/255.0, 170.0/255.0,
-//
-//            0.5f,  0.5f,  0.5f,  61.0/255.0, 126.0/255.0, 170.0/255.0,  // right
-//            0.5f,  0.5f, -0.5f,  61.0/255.0, 126.0/255.0, 170.0/255.0,
-//            0.5f, -0.5f, -0.5f,  61.0/255.0, 126.0/255.0, 170.0/255.0,
-//            0.5f, -0.5f, -0.5f,  61.0/255.0, 126.0/255.0, 170.0/255.0,
-//            0.5f, -0.5f,  0.5f,  61.0/255.0, 126.0/255.0, 170.0/255.0,
-//            0.5f,  0.5f,  0.5f,  61.0/255.0, 126.0/255.0, 170.0/255.0,
-//
-//            -0.5f, -0.5f, -0.5f,  1.0, 228.0/255.0, 122.0/255.0, // bottom
-//            0.5f, -0.5f, -0.5f,  1.0, 228.0/255.0, 122.0/255.0,
-//            0.5f, -0.5f,  0.5f,  1.0, 228.0/255.0, 122.0/255.0,
-//            0.5f, -0.5f,  0.5f,  1.0, 228.0/255.0, 122.0/255.0,
-//            -0.5f, -0.5f,  0.5f,  1.0, 228.0/255.0, 122.0/255.0,
-//            -0.5f, -0.5f, -0.5f,  1.0, 228.0/255.0, 122.0/255.0,
-//
-//            -0.5f,  0.5f, -0.5f,  1.0, 228.0/255.0, 122.0/255.0,  // top
-//            0.5f,  0.5f, -0.5f, 1.0, 228.0/255.0, 122.0/255.0,
-//            0.5f,  0.5f,  0.5f,  1.0, 228.0/255.0, 122.0/255.0,
-//            0.5f,  0.5f,  0.5f,  1.0, 228.0/255.0, 122.0/255.0,
-//            -0.5f,  0.5f,  0.5f,  1.0, 228.0/255.0, 122.0/255.0,
-//            -0.5f,  0.5f, -0.5f,  1.0, 228.0/255.0, 122.0/255.0,
-//    };
     float vertices[] = {
             //back
             -0.5f, -0.5f, -0.5f,   142.0/255.0, 84.0/255.0, 233.0/255.0,   0.0f, 0.0f,
@@ -291,36 +229,7 @@ int main(int, char**) {
     // VAOs requires a call to glBindVertexArray anyways so we generally don't unbind VAOs (nor VBOs) when it's not directly necessary.
     glBindVertexArray(0);
 
-    // load and create texture
-    unsigned int texture;
-    glGenTextures(1, &texture);
-    glBindTexture(GL_TEXTURE_2D, texture);
-    // set the texture wrapping parameters
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);	// set texture wrapping to GL_REPEAT (default wrapping method)
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-    // set texture filtering parameters
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-    // load image, create texture and generate mipmaps
-    int width, height, nrChannels;
-    stbi_set_flip_vertically_on_load(true);
-    unsigned char *data = stbi_load(
-            "/Users/yvettemuki/Documents/code/OpenGL/HelloCube/src/container.jpg",
-            &width,
-            &height,
-            &nrChannels,
-            0
-    );
-    if (data)
-    {
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
-        glGenerateMipmap(GL_TEXTURE_2D);
-    }
-    else
-    {
-        std::cout << "Failed to load texture" << std::endl;
-    }
-    stbi_image_free(data);
+    unsigned int textureID = loadTexture("/Users/yvettemuki/Documents/code/OpenGL/HelloCube/src/container.jpg");
 
     // shader configuration
     shader.use();
@@ -399,7 +308,7 @@ int main(int, char**) {
         shader.setMat4("projection", projection);
         glBindVertexArray(VAO);
         glActiveTexture(GL_TEXTURE0);
-        glBindTexture(GL_TEXTURE_2D, texture);
+        glBindTexture(GL_TEXTURE_2D, textureID);
 //        glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
         glDrawArrays(GL_TRIANGLES, 0, 36);
         glBindVertexArray(0);
@@ -420,5 +329,40 @@ int main(int, char**) {
     glfwTerminate();
 
     return 0;
+}
+
+unsigned int loadTexture(const char *path)
+{
+    // load and create texture
+    unsigned int ID;
+    glGenTextures(1, &ID);
+    glBindTexture(GL_TEXTURE_2D, ID);
+    // set the texture wrapping parameters
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);	// set texture wrapping to GL_REPEAT (default wrapping method)
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+    // set texture filtering parameters
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    // load image, create texture and generate mipmaps
+    int width, height, nrChannels;
+    stbi_set_flip_vertically_on_load(true);
+    unsigned char *data = stbi_load(
+            path,
+            &width,
+            &height,
+            &nrChannels,
+            0
+    );
+    if (data)
+    {
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+        glGenerateMipmap(GL_TEXTURE_2D);
+    }
+    else
+    {
+        std::cout << "Failed to load texture" << std::endl;
+    }
+    stbi_image_free(data);
+    return ID;
 }
 
